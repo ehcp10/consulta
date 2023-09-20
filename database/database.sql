@@ -18,6 +18,7 @@ CREATE table sexo (
 CREATE TABLE cliente (
     id int primary key,
     nome text,
+    data_nascimento date,
     profissao int references profissao(id),
     idade int,
     estado_civil int references estado_civil(id),

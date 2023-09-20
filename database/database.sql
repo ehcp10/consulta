@@ -22,7 +22,7 @@ CREATE TABLE cliente (
     profissao int references profissao(id),
     idade int,
     estado_civil int references estado_civil(id),
-    sexo int references sexo(id)  -- Adicionei uma vírgula aqui
+    sexo int references sexo(id)  
 );
 
 CREATE TABLE tipo_contato (
@@ -32,20 +32,20 @@ CREATE TABLE tipo_contato (
 
 CREATE TABLE contato (
     id int primary key,
-    client int references cliente(id),  -- Corrigi "client" para "cliente"
+    client int references cliente(id),  
     tipo_contato int references tipo_contato(id),
     valor text
 );
 
 CREATE TABLE contato_emergencial (
     id int primary key,
-    client int references cliente(id),  -- Corrigi "client" para "cliente"
+    client int references cliente(id),  
     tipo_contato int references tipo_contato(id),
     valor text
 );
 
 CREATE TABLE custo_cliente(
     id int primary key,
-    client int references cliente(id),  -- Corrigi "client" para "cliente"
-    custo_sessao numeric(1000,2)  -- Adicionei uma vírgula aqui
+    client int references cliente(id),  
+    custo_sessao numeric(1000,2)  
 );

@@ -49,3 +49,30 @@ CREATE TABLE custo_cliente(
     client int references cliente(id),  
     custo_sessao numeric(1000,2)  
 );
+
+CREATE TABLE status(
+    id int primary key,
+    status text
+);
+
+CREATE TABLE pagamento(
+    id int primary key,
+    situacao text
+);
+
+CREATE TABLE sessao (
+    id int primary key,
+    data_sessao date,
+    hora int,
+    cliente int references cliente(id),
+    presenca boolean,
+    status int references status(id),
+    pagamento int references pagamento(id),
+    atualizado_em  date
+);
+
+CREATE TABLE credito (
+    id int primary key,
+    cliente int references cliente(id),
+    quantidade_sessoes int
+)

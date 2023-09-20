@@ -26,28 +26,3 @@ type MaritalStatus struct {
 	ID            int
 	MaritalStatus string
 }
-
-type ContactType struct {
-	ID          int
-	Description string
-}
-
-type Contact struct {
-	ID          int
-	Client      Client
-	ContactType ContactType
-	Value       string
-}
-
-type EmergenceContact struct {
-	ID          int
-	Client      Client
-	ContactType ContactType
-	Value       string
-}
-
-type ClientCost struct {
-	ID          int
-	Client      Client
-	SessionCost float64
-}

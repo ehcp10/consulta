@@ -5,7 +5,7 @@ services:
   db:
     image: postgres
     volumes:
-      - ./../database/database.sql:/docker-entrypoint-initdb.d/database.sql  # Corrigido aqui
+      - ./../database/database.sql:/docker-entrypoint-initdb.d/database.sql
     restart: always
     environment:
       POSTGRES_USER: admin

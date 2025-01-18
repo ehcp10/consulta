@@ -13,14 +13,12 @@ func main() {
 	os.Setenv("DB_PASSWORD", "secret")
 	os.Setenv("DB_NAME", "psych_db")
 	os.Setenv("DB_PORT", "5432")
-
-	// 1. Conectar ao BD
+	
 	db, err := repository.NewDB()
 	if err != nil {
 		log.Fatal("Erro ao conectar ao DB:", err)
 	}
 
-	// 2. AutoMigrate (apenas para desenvolvimento / protótipo)
 	if err := db.AutoMigrate(
 		&domain.Client{},
 		&domain.ContactClient{},

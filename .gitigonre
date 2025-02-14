@@ -1,0 +1,48 @@
+# Diretórios do Go
+/bin/
+/pkg/
+/vendor/
+
+# Módulos e cache do Go
+go.sum
+go.work
+go.work.sum
+*.mod
+
+# Binários e objetos compilados
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+*.out
+
+# Arquivos temporários e de log
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+*.bak
+
+# Arquivos do GoLand (JetBrains IDEs)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Testes e coverage
+*.test
+*.cover
+cover.out
+
+# Docker e contêineres
+docker-compose.override.yml
+.env
+.envrc
+
+# Outros arquivos gerados
+node_modules/
+dist/
+build/

@@ -7,15 +7,15 @@ import (
 
 type Client struct {
 	gorm.Model
-	FistName         string             `gorm:"varchar(255);not null"`
-	LastName         string             `gorm:"varchar(255);not null"`
-	CPF              string             `gorm:"varchar(11);not null"`
-	age              uint8              `gorm:"not null"`
-	occupation       string             `gorm:"varchar(255);not null"`
-	MaritalStatus    string             `gorm:"varchar(255);not null"`
-	Gender           uint8              `gorm:"not null"`
-	BirthDate        time.Time          `gorm:"not null"`
-	Contacts         []ContactClient    `gorm:"foreignkey:ClientID"`
-	EmergencyContact []EmergencyContact `gorm:"foreignkey:ClientID"`
-	Appointment      []Appointment      `gorm:"foreignkey:ClientID"`
+	FirstName         string             `gorm:"not null" json:"first_name"`
+	LastName          string             `gorm:"not null" json:"last_name"`
+	CPF               string             `gorm:"size:11;not null;unique" json:"cpf"`
+	Age               uint8              `gorm:"not null" json:"age"`
+	Occupation        string             `gorm:"not null" json:"occupation"`
+	MaritalStatus     string             `gorm:"not null" json:"marital_status"`
+	Gender            uint8              `gorm:"not null" json:"gender"`
+	BirthDate         time.Time          `gorm:"not null" json:"birth_date"`
+	Contacts          []ContactClient    `gorm:"foreignKey:ClientID" json:"contacts"`
+	EmergencyContacts []EmergencyContact `gorm:"foreignKey:ClientID" json:"emergency_contact"`
+	Appointments      []Appointment      `gorm:"foreignKey:ClientID" json:"appointments"`
 }
